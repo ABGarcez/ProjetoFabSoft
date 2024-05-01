@@ -21,6 +21,7 @@ public class ClienteServiceImpl
         repository.save(cliente);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public Cliente getById(long id) {
         return repository.getById(id);
@@ -29,6 +30,13 @@ public class ClienteServiceImpl
     @Override
     public List<Cliente> getAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public Cliente delete(long id) {
+        var cliente = getById(id);
+        repository.deleteById(id);
+        return cliente;
     }
     
 }

@@ -14,6 +14,7 @@ public class Startup {
     @Autowired
     private ClienteService service;
 
+    @SuppressWarnings("deprecation")
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event){
         var cliente1 = new Cliente();
