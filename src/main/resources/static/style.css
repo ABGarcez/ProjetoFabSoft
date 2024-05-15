@@ -1,0 +1,14 @@
+body{height: 100vh;}
+/*.bottom-div {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #cb0000;
+    padding: 10px;}*/
+
+.image{
+    width: 50%;
+    height: auto;
+    text-align: center;
+
+}

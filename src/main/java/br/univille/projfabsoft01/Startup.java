@@ -23,4 +23,5 @@ public class Startup {
         cliente1.setDataNascimento(new Date(2024,04,17));
         service.save(cliente1);
     }
+   
 }

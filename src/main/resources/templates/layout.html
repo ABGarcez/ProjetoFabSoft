@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" />
         <link rel="stylesheet" th:href="@{/webjars/jquery-ui/1.13.2/jquery-ui.css}" />
-        <link rel="stylesheet" th:href="@{/site.css}" />
+        <link rel="stylesheet" th:href="@{/style.css}" />
     </head>
     <body> 
         
@@ -34,6 +34,21 @@
         </nav>
          
         <div th:fragment="footer" id="footer">
+            <table style="position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px;" 
+            class="bottom-div" id="fundo_pagina">
+                <tbody>
+                    <tr>
+                        <td>Empresa</td>
+                        <td>Usuário</td>
+                        <td>Data</td>
+                        <td>Hora</td>
+                    </tr>
+                </tbody>
+            </table>
             <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
             <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
         </div>

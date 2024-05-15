@@ -2,11 +2,11 @@
     $("#tabclientes").on("click",".js-delete",function(){
         //alert("Clicou")
         let botaoclicado = $(this)
-        $("#btnsim").attr("data-id", botaoclicado.attr("data-id"))
+        $("#btnsimcliente").attr("data-id", botaoclicado.attr("data-id"))
         $("#modalcliente").modal("show")
     })
 
-    $("#btnsim").on("click", function(){
+    $("#btnsimcliente").on("click", function(){
         let botaosim = $(this)
         let id = botaosim.attr("data-id")
         $.ajax({
@@ -16,7 +16,5 @@
                 window.location.href = "/clientes"
             }
         })
-
     })
-
 })()
