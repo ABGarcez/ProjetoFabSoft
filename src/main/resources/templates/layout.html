@@ -17,10 +17,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/clientes">Cadastrar Clientes</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
@@ -34,23 +34,19 @@
         </nav>
          
         <div th:fragment="footer" id="footer">
-            <table style="position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #ffffff;
-            padding: 10px;" 
+            <table  
             class="bottom-div" id="fundo_pagina">
                 <tbody>
                     <tr>
-                        <td>Empresa</td>
-                        <td>Usuário</td>
-                        <td>Data</td>
-                        <td>Hora</td>
+                        <td class="nomeEmpresa">ZSG INDUSTRIA PLASTICA LTDA</td>
+                        <td class="nomeUsuario">Usuário</td>
+                        <td class="Data"><time datetime="" id="current-time"></time></td>
                     </tr>
                 </tbody>
             </table>
             <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
             <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+            <script th:src="@{/scriptData.js}"></script>
         </div>
     </body>
 </html>

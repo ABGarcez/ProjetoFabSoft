@@ -1,19 +1,14 @@
 package br.univille.projfabsoft01.entity;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 
-@SuppressWarnings("unused")
 @Entity
 public class Produto {
     @Id
@@ -23,8 +18,19 @@ public class Produto {
     @NotBlank(message = "não pode ser em branco")
     private String nome;
     @Column(length = 1000)
-    private String tipo;
+    
     private double preco_pacote;
+
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    private MaterialProduto material;
+
+
+    public MaterialProduto getMaterial() {
+        return material;
+    }
+    public void setMaterial(MaterialProduto material) {
+        this.material = material;
+    }
     public long getId() {
         return id;
     }
@@ -36,12 +42,6 @@ public class Produto {
     }
     public void setNome(String nome) {
         this.nome = nome;
-    }
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
     public double getPreco_pacote() {
         return preco_pacote;

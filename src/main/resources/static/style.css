@@ -1,14 +1,21 @@
 body{height: 100vh;}
-/*.bottom-div {
+.bottom-div {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #cb0000;
-    padding: 10px;}*/
+    background-color: lightgrey;
+    padding: 10px;
+}
 
 .image{
-    width: 50%;
+    width: 40%;
     height: auto;
-    text-align: center;
-
+    margin: auto;
+    display: block;
+    
 }
+
+.btn{
+    background-color: #0957aa;
+}
+

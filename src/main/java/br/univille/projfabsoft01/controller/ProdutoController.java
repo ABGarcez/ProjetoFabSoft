@@ -1,5 +1,7 @@
 package br.univille.projfabsoft01.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projfabsoft01.entity.Produto;
+import br.univille.projfabsoft01.entity.MaterialProduto;
+import br.univille.projfabsoft01.service.MaterialProdutoService;
 import br.univille.projfabsoft01.service.ProdutoService;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -18,6 +22,8 @@ public class ProdutoController {
     
     @Autowired
     private ProdutoService service;
+    @Autowired
+    private MaterialProdutoService materialProdutoService;
 
     @GetMapping
     public ModelAndView index(){
@@ -27,8 +33,14 @@ public class ProdutoController {
 
     @GetMapping("/novo")
     public ModelAndView novo(){
-        var Produto = new Produto();
-        return new ModelAndView("produtos/form", "produto", Produto);
+        HashMap <String,Object> dados= new HashMap<>();
+        var produto = new Produto();
+        var listaMaterialProduto = materialProdutoService.getAll();
+        dados.put("produto", produto);
+        dados.put("listaMaterialProduto", listaMaterialProduto);
+
+
+        return new ModelAndView("produtos/form", dados);
     }
 
     @PostMapping
@@ -39,9 +51,13 @@ public class ProdutoController {
 
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
-        var produto = service.getById(id);      
+        HashMap <String,Object> dados= new HashMap<>();
+        var produto = new Produto();
+        var listaMaterialProduto = materialProdutoService.getAll();
+        dados.put("produto", produto);
+        dados.put("listaMaterialProduto", listaMaterialProduto);
         
-        return new ModelAndView("produtos/form", "produto", produto);
+        return new ModelAndView("produtos/form",dados);
     }
 
     @GetMapping("/delete/{id}")

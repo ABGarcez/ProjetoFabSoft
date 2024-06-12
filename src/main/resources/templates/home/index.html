@@ -2,19 +2,24 @@
 <html xmlns="https://www.thymeleaf.org" lang="pt-br">
 
     <head th:include="layout :: htmlhead">
-        <link rel="stylesheet" href="../../static/style.css"/>
-    </head>
-        <nav th:include="layout :: menu">(menu)</nav>
-    <h1>Sistema Administrativo</h1>
+    <!-- <link rel="stylesheet" href="../../static/style.css"/> -->
+
+        
+    
     <body>
+        <nav th:replace="layout :: menu">(menu)</nav>
+        <h1 class="titulo-home">Sistema Administrativo</h1>
+        
         <main class="container">
-            <a href="/clientes" class="btn btn-primary" style="position: fixed; left: 0px;">Cadastrar cliente</a>
+        
+            <a href="/clientes" class="btn btn-primary" style="position: fixed; left: 0px; top: 100px">Cadastrar cliente</a>
             <a href="/produtos" class="btn btn-primary" style="position: fixed; left: 0px; top: 150px">Cadastrar produtos</a>
-            <img src="/img/foto-dutex-titulo.jpeg" class="image"> 
-
-
+            
+            
+        
+            <img src="/img/foto-dutex-titulo.png" class="image">
+            <br/>
         </main>
-        <br/>
         <div th:include="layout :: footer">(footer)</div>
     </body>
-</html> 
+</html>

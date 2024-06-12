@@ -14,11 +14,16 @@
                     <input type="text" th:field="*{nome}" id="txtnome" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="txtendereco">Tipo</label>
-                    <input type="text" th:field="*{tipo}" id="txttipo" class="form-control">   <!-- O "" é para não precisar ficar escreverndo a anotação do nome cliente -->
+                    <label for="txttipo_produto">Material</label>
+                    <select th:field="*{material}" id="txttipo" class="form-select">
+                        <option th:each="umMaterial : ${listaMaterialProduto}"
+                                th:value="${umMaterial.id}"
+                                th:text="${umMaterial.tipoProduto}"></option> 
+
+                    </select>  
                 </div>
                 <div class="form-group">
-                    <label for="txtdatanascimento">Preço/pacote</label>
+                    <label for="txtpreco_pacote">Preço/pacote</label>
                     <input type="number" th:field="*{preco_pacote}" id="txtpreco_pacote" class="form-control">
                 </div>
 
