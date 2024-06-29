@@ -52,7 +52,7 @@ public class ProdutoController {
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         HashMap <String,Object> dados= new HashMap<>();
-        var produto = new Produto();
+        var produto = service.getById(id);
         var listaMaterialProduto = materialProdutoService.getAll();
         dados.put("produto", produto);
         dados.put("listaMaterialProduto", listaMaterialProduto);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head th:include="layout :: htmlhead"></head>
+    <body>
+        <main class="container">
+            <nav th:replace="layout :: menu">(menu)</nav>
+            <h1>Item</h1>
+            <form th:action="@{/itemEstoque}" method="post" th:object="${itemEstoque}">
+                
+                <input type="hidden" th:field="*{id}">
+
+                <div class="form-group">
+                    <label for="txtproduto">Produto</label>
+                    <select th:field="*{produto}" id="txtproduto" class="form-select">
+                        <option value="">Selecionar...</option>
+                        <option th:each="umProduto : ${listaProduto}"
+                                th:value="${umProduto.id}"
+                                th:text="${umProduto.nome}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="txtquantidade">Quantidade</label>
+                    <input type="text" th:field="*{Quantidade}" id="txtquantidade" class="form-control">   <!-- O "" é para não precisar ficar escreverndo a anotação do nome cliente -->
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </main>
+
+        <div th:include="layout :: footer">(footer)</div>
+    </body>
+</html>

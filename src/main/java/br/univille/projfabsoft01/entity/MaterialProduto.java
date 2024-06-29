@@ -27,5 +27,9 @@ public class MaterialProduto {
     public void setTipoProduto(String tipoProduto) {
         this.tipoProduto = tipoProduto;
     }
+    @Override
+    public String toString() {
+        return "MaterialProduto [id=" + id + ", tipoProduto=" + tipoProduto + "]";
+    }
     
 }

@@ -34,9 +34,9 @@ public class ProdutoServiceImpl
 
     @Override
     public Produto delete(long id) {
-        var cliente = getById(id);
+        var produto = getById(id);
         repository.deleteById(id);
-        return cliente;
+        return produto;
     }
     
 }

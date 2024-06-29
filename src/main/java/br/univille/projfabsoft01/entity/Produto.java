@@ -17,7 +17,7 @@ public class Produto {
     @Column(length = 1000, nullable = false)
     @NotBlank(message = "não pode ser em branco")
     private String nome;
-    @Column(length = 1000)
+    //@Column(length = 1000)
     
     private double preco_pacote;
 
@@ -48,6 +48,10 @@ public class Produto {
     }
     public void setPreco_pacote(double preco_pacote) {
         this.preco_pacote = preco_pacote;
+    }
+    @Override
+    public String toString() {
+        return nome;
     }
     
 }

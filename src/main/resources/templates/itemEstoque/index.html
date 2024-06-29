@@ -5,52 +5,52 @@
     </head>
     <body>
         <nav th:replace="layout :: menu">(menu)</nav>
-        <h1>Produtos</h1>
+        <h1>Estoque</h1>
 
         <a href="/" class="btn btn-primary">Voltar</a>
-        <a href="/produtos/novo" class="btn btn-primary">Novo</a>
+        <a href="/itemEstoque/novo" class="btn btn-primary">Novo</a>
 
-        <table class="table" id="tabprodutos">
+        <table class="table" id="tabitemEstoque">
             <thead>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th>Preço/pacote</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th></th>
                 <th></th>
             </thead>
             <tbody>
-                <tr th:each="umProduto : ${listaProdutos}">
-                    <td th:text="${umProduto.nome}"></td>
-                    <td th:text="${umProduto.material?.tipoProduto}"></td>
-                    <td th:text="${umProduto.preco_pacote}"></td>
-                    <td>
-                        <a th:href="@{'/produtos/alterar/' + ${umProduto.id}}" class="btn btn-warning">Alterar</a>
+                <tr th:each="umItemEstoque : ${listaItemEstoque}">
+                    <td th:text="${umItemEstoque.Produto}"></td>
+                    <td th:text="${umItemEstoque.Quantidade}"></td>
+                    <td></td>
+                    <!-- <td>
+                        <a th:href="@{'/itemEstoque/alterar/' + ${umItemEstoque.id}}" class="btn btn-warning">Alterar</a>
                         <button class="btn btn-danger js-delete"
-                            th:data-id="${umProduto.id}">Excluir</button>
-                    </td>
+                            th:data-id="${umItemEstoque.id}">Excluir</button>
+                    </td> -->
                 </tr>
             </tbody>
         </table>
 
-        <div class="modal" tabindex="-1" id="modalproduto">
+        <div class="modal" tabindex="-1" id="modalItemEstoque">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Excluir produto</h5>
+                  <h5 class="modal-title">Excluir Item</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <p>Confirma a exclusão do produto?</p>
+                  <p>Confirma a exclusão do item?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                  <button type="button" class="btn btn-primary" id="btnsimproduto">Sim</button>
+                  <button type="button" class="btn btn-primary" id="btnsimitemEstoque">Sim</button>
                 </div>
               </div>
             </div>
           </div>
 
         <div th:include="layout :: footer">(footer)</div>
-        <script th:src="@{/scriptProdutos.js}"></script>
+        <script th:src="@{/scriptItemEstoque.js}"></script>
         
     </body>
     <div th:include="layout :: footer">(footer)</div>
