@@ -13,20 +13,20 @@
         <table class="table" id="tabitemEstoque">
             <thead>
                 <th>Produto</th>
+                <th>Material</th>
                 <th>Quantidade</th>
-                <th></th>
                 <th></th>
             </thead>
             <tbody>
                 <tr th:each="umItemEstoque : ${listaItemEstoque}">
                     <td th:text="${umItemEstoque.Produto}"></td>
+                    <td th:text="${umItemEstoque.Produto.Material.TipoProduto}"></td>
                     <td th:text="${umItemEstoque.Quantidade}"></td>
-                    <td></td>
-                    <!-- <td>
-                        <a th:href="@{'/itemEstoque/alterar/' + ${umItemEstoque.id}}" class="btn btn-warning">Alterar</a>
+                    <td>
+                        <!-- <a th:href="@{'/itemEstoque/alterar/' + ${umItemEstoque.id}}" class="btn btn-warning">Alterar</a> -->
                         <button class="btn btn-danger js-delete"
                             th:data-id="${umItemEstoque.id}">Excluir</button>
-                    </td> -->
+                    </td>
                 </tr>
             </tbody>
         </table>

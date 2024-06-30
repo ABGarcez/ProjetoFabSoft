@@ -1,12 +1,12 @@
 (function(){
-    $("#tabItemEstoque").on("click",".js-delete",function(){
+    $("#tabitemEstoque").on("click",".js-delete",function(){
         //alert("Clicou")
         let botaoclicado2 = $(this)
-        $("#btnsimItemEstoque").attr("data-id", botaoclicado2.attr("data-id"))
+        $("#btnsimitemEstoque").attr("data-id", botaoclicado2.attr("data-id"))
         $("#modalItemEstoque").modal("show")
     })
 
-    $("#btnsimItemEstoque").on("click", function(){
+    $("#btnsimitemEstoque").on("click", function(){
         let botaosim2 = $(this)
         let id = botaosim2.attr("data-id")
         $.ajax({
